@@ -1,0 +1,30 @@
+site_name: CoE Engineering Playbook
+site_url: ""
+site_description: Playbook de Ingeniería del CoE Analytics
+site_author: YPF - CoE Analytics
+
+repo_url: https://coe-engineering-playbook.com/
+edit_uri: ""
+
+theme:
+  name: material
+  font:
+    text: Roboto
+  palette:
+    primary: blue
+  logo: img/YPF.svg
+  favicon: img/YPF.svg
+  features:
+    - navigation.instant
+    - navigation.indexes
+
+markdown_extensions:
+  - pymdownx.tasklist
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.pathconverter
+  - pymdownx.tabbed
+
+
+
+
