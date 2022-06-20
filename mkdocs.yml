@@ -3,7 +3,7 @@ site_url: ""
 site_description: Playbook de Ingeniería del CoE Analytics
 site_author: YPF - CoE Analytics
 
-repo_url: https://coe-engineering-playbook.com/
+repo_url: https://github.com/DJuanes/Coe-Engineering-Playbook
 edit_uri: ""
 
 theme:
