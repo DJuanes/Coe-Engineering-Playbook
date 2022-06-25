@@ -237,7 +237,7 @@ Uno de los objetivos clave de la validación de la compilación es aislar e iden
 
 ### Tests en producción
 
-* Existen varios enfoques para llevar a cabo de forma segura las pruebas automatizadas para los despliegues de producción. Algunos de ellos pueden ser:
+* Existen varios [enfoques](https://copyconstruct.medium.com/testing-in-production-the-safe-way-18ca102d0ef1) para llevar a cabo de forma segura las pruebas automatizadas para los despliegues de producción. Algunos de ellos pueden ser:
   * Feature flagging
   * A/B testing
   * Traffic shifting

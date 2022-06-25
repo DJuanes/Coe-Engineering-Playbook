@@ -1,6 +1,6 @@
 # Checklist de los fundamentos de la ingeniería
 
-Esta checklist ayuda a garantizar que nuestros proyectos cumplen con nuestros fundamentos de ingeniería.
+Esta checklist ayuda a garantizar que los proyectos cumplen con nuestros fundamentos de ingeniería.
 
 ## Control del código fuente
 
@@ -12,7 +12,7 @@ Esta checklist ayuda a garantizar que nuestros proyectos cumplen con nuestros fu
 - [ ] Documentación clara de la estructura del repositorio.
 - [ ] Los secretos no forman parte del historial de confirmaciones ni se hacen públicos.
 
-Más detalles sobre el control de [código fuente](control de codigo fuente/README.md)
+Más detalles sobre el [control de código fuente](./control%20de%20codigo%20fuente/README.md)
 
 ## Seguimiento de elementos de trabajo
 
@@ -26,15 +26,15 @@ Más detalles sobre la gestión del backlog
 - [ ] Las pruebas unitarias cubren la mayoría de los componentes (>90% si es posible).
 - [ ] Las pruebas de integración se ejecutan para probar la solución e2e.
 
-Más detalles sobre las [pruebas automatizadas](testing automatizado/README.md)
+Más detalles sobre las [pruebas automatizadas](./testing%20automatizado/README.md)
 
 ## CI/CD
 
-- [ ] El proyecto ejecuta CI con construcción y pruebas automatizadas en cada PR.
+- [ ] El proyecto ejecuta CI con compilación y pruebas automatizadas en cada PR.
 - [ ] El proyecto utiliza CD para gestionar los despliegues en un entorno de réplica antes de fusionar los PR.
 - [ ] La rama principal siempre está disponible.
 
-Más detalles sobre la [integración y entrega continua](ci-cd/README.md)
+Más detalles sobre la [integración y entrega continua](./CI_CD/README.md)
 
 ## Seguridad
 
@@ -43,7 +43,7 @@ Más detalles sobre la [integración y entrega continua](ci-cd/README.md)
 - [ ] Los datos se cifran en tránsito y en reposo y las contraseñas se codifican.
 - [ ] ¿Está el sistema dividido en segmentos lógicos con separación de intereses? Esto ayuda a limitar las vulnerabilidades de seguridad.
 
-Más detalles sobre la [seguridad](securidad/README.md)
+Más detalles sobre la [seguridad](./securidad/README.md)
 
 ## Observabilidad
 
@@ -54,7 +54,7 @@ Más detalles sobre la [seguridad](securidad/README.md)
 - [ ] La configuración del log puede modificarse sin necesidad de cambiar el código.
 - [ ] El contexto del tracing entrante se propaga para permitir la depuración de problemas de producción.
 
-Más detalles sobre la [observabilidad](observabilidad/README.md)
+Más detalles sobre la [observabilidad](./observabilidad/README.md)
 
 ## Agilidad/Scrum
 
@@ -71,9 +71,9 @@ Más detalles sobre el desarrollo ágil
 - [ ] El equipo tiene una checklist de la revisión del código o un proceso establecido.
 - [ ] Un número mínimo de revisores (normalmente 2) para una fusión de PR se hace cumplir por política.
 - [ ] Se establecen linters/analizadores de código, pruebas unitarias y compilaciones exitosas para las fusiones de PR.
-- [ ] Hay un proceso para imponer una revisión rápida.
+- [ ] Hay un proceso para forzar una revisión rápida.
 
-Más detalles sobre las [revisiones de código](revisiones de codigo/README.md)
+Más detalles sobre las [revisiones de código](./revisiones%20de%20codigo/README.md)
 
 ## Retrospectivas
 

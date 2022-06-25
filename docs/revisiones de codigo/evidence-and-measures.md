@@ -4,7 +4,7 @@
 
 Muchos de los elementos de control de calidad del código se pueden automatizar o aplicar mediante políticas en los sistemas modernos de seguimiento de elementos de trabajo y control de versiones. La verificación de las políticas en la rama principal en Azure DevOps o GitHub, por ejemplo, puede ser evidencia suficiente de que un equipo de proyecto está realizando revisiones de código.
 
-* Las ramas principales en todos los repositorios tienen políticas de rama. [Configuración de políticas de ramas](../tools.md#Configuración de políticas de ramas)
+* Las ramas principales en todos los repositorios tienen políticas de rama. [Configuración de políticas de ramas](tools.md#configuración-de-políticas-de-ramas)
 * Todas las compilaciones producidas a partir de repositorios de proyectos incluyen linters apropiados, ejecutan pruebas unitarias.
 * Cada elemento de trabajo de error debe incluir un enlace al PR que lo introdujo, una vez que se haya diagnosticado el error. Esto ayuda con el aprendizaje.
 * Cada elemento de trabajo de error debe incluir una nota sobre cómo el error podría (o no) detectarse en una revisión de código.

@@ -9,10 +9,10 @@ Hay una serie de herramientas modernas para hacer que los sistemas sean observab
 
 ## Opciones
 
-* [Loki](https://microsoft.github.io/code-with-engineering-playbook/observability/tools/loki/)
-* [OpenTelemetry](https://microsoft.github.io/code-with-engineering-playbook/observability/tools/OpenTelemetry/)
-* [Kubernetes Dashboards](https://microsoft.github.io/code-with-engineering-playbook/observability/tools/KubernetesDashboards/)
-* [Prometheus](https://microsoft.github.io/code-with-engineering-playbook/observability/tools/Prometheus/)
+* [Loki](loki.md)
+* [OpenTelemetry](OpenTelemetry.md)
+* [Kubernetes Dashboards](KubernetesDashboards.md)
+* [Prometheus](Prometheus.md)
 
 ## Malla de servicio (Service Mesh)
 

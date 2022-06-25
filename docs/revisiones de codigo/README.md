@@ -12,6 +12,6 @@ La revisión del código es una forma de tener una conversación sobre el códig
 
 ## Recursos
 
-* [Herramientas de revisión de código](https://microsoft.github.io/code-with-engineering-playbook/code-reviews/tools/)
+* [Herramientas de revisión de código](tools.md)
 * [Documentación de prácticas de ingeniería de Google: Cómo hacer una revisión de código](https://google.github.io/eng-practices/review/reviewer/)
 * [Los secretos mejor guardados de la revisión del código de pares](https://static1.smartbear.co/smartbear/media/pdfs/best-kept-secrets-of-peer-code-review_redirected.pdf)

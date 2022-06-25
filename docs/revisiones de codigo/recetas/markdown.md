@@ -33,14 +33,15 @@ Está disponible como [paquete de python](https://github.com/amperser/proselint/
 
 La [extensión Write Good Linter](https://marketplace.visualstudio.com/items?itemName=travisthetechie.write-good-linter) se integra con VS Code para brindar consejos sobre gramática y lenguaje mientras se edita el documento.
 
-extensión markdownlint
+### markdownlint extension
+
 La [extensión markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) examina los documentos de Markdown y muestra advertencias sobre violaciones de reglas durante la edición.
 
 ## Validación de compilación
 
 ### Linting para validación de PR
 
-Para automatizar el linting con markdownlint para la validación de PR en las acciones de GitHub como lo hacemos en este repositorio, use el siguiente YAML.
+Para automatizar el linting con markdownlint para la validación de PR en las acciones de GitHub, use el siguiente YAML.
 
 ```yaml
 name: Markdownlint

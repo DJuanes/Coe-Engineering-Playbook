@@ -17,7 +17,7 @@ Este es nuestro playbook. Todas las contribuciones son bienvenidas! Por favor, n
 
 ## Checklist
 
-Siga la [lista de comprobación de los fundamentos de la ingeniería](eng-fundamentals-checklist.md)!
+Siga la [checklist de los fundamentos de la ingeniería](eng-fundamentals-checklist.md)!
 
 ## Estructura de un sprint
 
@@ -27,8 +27,8 @@ La [estructura de un sprint](sprint-structure.md) es un desglose de las seccione
 
 * Mantenga alta la vara de la calidad del código.
 * Valore la calidad y la precisión por encima de "hacer el trabajo".
-* Trabaje con diligencia en lo único importante.
-* Como equipo distribuido, tómate el tiempo necesario para compartir el contexto a través de la wiki, los equipos y los ítems del backlog.
+* Trabaje con diligencia en lo más importante.
+* Como equipo distribuido, tómate el tiempo necesario para compartir el contexto a través de la wiki, teams y los ítems del backlog.
 * Haz que lo más sencillo funcione ahora. Construye menos funciones hoy, pero asegúrate de que funcionan de forma increíble. Después, añade más funciones mañana.
 * Evita añadir alcance a un elemento del backlog, en su lugar añade un nuevo elemento del backlog.
 * Nuestro objetivo es ofrecer un valor incremental al cliente.
@@ -41,8 +41,7 @@ La [estructura de un sprint](sprint-structure.md) es un desglose de las seccione
 * Desarrollo ágil
 * Pruebas automatizadas
 * [Revisiones de código](revisiones de codigo/README.md)
-* Entrega continua (CD)
-* Integración continua (CI)
+* [Integración y entrega continuas (CI/CD)](CI_CD/README.md)
 * Experiencia del desarrollador
 * Documentación
 * [Observabilidad](observabilidad/README.md)

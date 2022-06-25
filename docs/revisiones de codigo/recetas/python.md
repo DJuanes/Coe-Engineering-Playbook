@@ -99,7 +99,7 @@ yapf [file/folder] --in-place
 
 ## VS Code Extensions
 
-### [Python]((https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+### [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 
 Es la extensión base que debería haber instalado para el desarrollo de Python con VS Code. Permite intellisense, depuración, linting (con los linters anteriores), pruebas con pytest o unittest y formateo de código con los formateadores mencionados anteriormente.
 
