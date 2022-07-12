@@ -1,0 +1,7 @@
+# APIs REST
+
+Cuando se crean [APIs REST](https://en.wikipedia.org/wiki/Representational_state_transfer), se puede aprovechar la [Especificación OpenAPI (OAI)](https://github.com/OAI/OpenAPI-Specification/) para describirlas:
+> La Especificación OpenAPI (OAI) define una descripción de interfaz estándar, independiente del lenguaje de programación, para las APIs HTTP, que permite tanto a los humanos como a los ordenadores descubrir y entender las capacidades de un servicio sin necesidad de acceder al código fuente, a la documentación adicional o a la inspección del tráfico de red. Cuando se define correctamente mediante OpenAPI, un consumidor puede entender e interactuar con el servicio remoto con una cantidad mínima de lógica de implementación.
+> Los casos de uso de los documentos de definición de API legibles por máquina incluyen, entre otros, los siguientes: documentación interactiva; generación de código para la documentación, los clientes y los servidores; y automatización de casos de prueba. Los documentos OpenAPI describen los servicios de una API y se representan en formato YAML o JSON. Estos documentos pueden producirse y servirse estáticamente o generarse dinámicamente desde una aplicación.
+
+Hay implementaciones disponibles para muchos lenguajes, incluyendo herramientas de bajo nivel, editores, interfaces de usuario, generadores de código, etc. Aquí puede encontrar una lista de herramientas conocidas para los diferentes lenguajes: [Implementaciones de OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/IMPLEMENTATIONS.md).
