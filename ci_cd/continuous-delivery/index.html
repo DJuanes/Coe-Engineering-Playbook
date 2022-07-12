@@ -1,0 +1,2807 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Playbook de Ingeniería del CoE Analytics">
+      
+      
+        <meta name="author" content="YPF - CoE Analytics">
+      
+      
+      <link rel="icon" href="../../img/YPF.svg">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.5">
+    
+    
+      
+        <title>Continuous Delivery - CoE Engineering Playbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4a0965b7.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#continuous-delivery" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="CoE Engineering Playbook" class="md-header__button md-logo" aria-label="CoE Engineering Playbook" data-md-component="logo">
+      
+  <img src="../../img/YPF.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CoE Engineering Playbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Continuous Delivery
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/DJuanes/Coe-Engineering-Playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CoE Engineering Playbook" class="md-nav__button md-logo" aria-label="CoE Engineering Playbook" data-md-component="logo">
+      
+  <img src="../../img/YPF.svg" alt="logo">
+
+    </a>
+    CoE Engineering Playbook
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/DJuanes/Coe-Engineering-Playbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Engineering Playbook
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../eng-fundamentals-checklist/" class="md-nav__link">
+        Checklist de los fundamentos de la ingeniería
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sprint-structure/" class="md-nav__link">
+        Estructura de un Sprint
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">Ci cd</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Ci cd" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Ci cd
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Continuous Delivery
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Continuous Delivery
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    Objetivo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guia-general" class="md-nav__link">
+    Guía general
+  </a>
+  
+    <nav class="md-nav" aria-label="Guía general">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definir-una-estrategia-de-release" class="md-nav__link">
+    Definir una estrategia de release
+  </a>
+  
+    <nav class="md-nav" aria-label="Definir una estrategia de release">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principios-de-la-estrategia-de-release" class="md-nav__link">
+    Principios de la estrategia de release
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-de-la-aplicacion-y-promocion-del-entorno" class="md-nav__link">
+    Release de la aplicación y promoción del entorno
+  </a>
+  
+    <nav class="md-nav" aria-label="Release de la aplicación y promoción del entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-primer-despliegue" class="md-nav__link">
+    El primer despliegue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-para-un-entorno-similar-al-de-produccion" class="md-nav__link">
+    Criterios para un entorno similar al de producción
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelado-del-pipeline-de-release" class="md-nav__link">
+    Modelado del pipeline de release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapas-del-pipeline-de-release" class="md-nav__link">
+    Etapas del pipeline de release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#releases-de-preproduccion" class="md-nav__link">
+    Releases de preproducción
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reversion-de-releases" class="md-nav__link">
+    Reversión de releases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referencias
+  </a>
+  
+    <nav class="md-nav" aria-label="Referencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#herramientas" class="md-nav__link">
+    Herramientas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../continuous-integration/" class="md-nav__link">
+        Continuous Integration
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../dev-sec-ops/">Dev sec ops</a>
+          
+            <label for="__nav_4_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Dev sec ops" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          Dev sec ops
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-sec-ops/dependency_container_scanning/" class="md-nav__link">
+        Dependency container scanning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-sec-ops/penetration_testing/" class="md-nav__link">
+        Penetration testing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-sec-ops/static_code_analysis/" class="md-nav__link">
+        Static code analysis
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_4_5" type="checkbox" id="__nav_4_4_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4_4_5">
+          Gestión de secretos
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Gestión de secretos" data-md-level="3">
+        <label class="md-nav__title" for="__nav_4_4_5">
+          <span class="md-nav__icon md-icon"></span>
+          Gestión de secretos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-sec-ops/gesti%C3%B3n%20de%20secretos/credential_scanning/" class="md-nav__link">
+        Credential scanning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dev-sec-ops/gesti%C3%B3n%20de%20secretos/secrets_rotation/" class="md-nav__link">
+        Secrets rotation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../control%20de%20codigo%20fuente/">Control de codigo fuente</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Control de codigo fuente" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Control de codigo fuente
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Desarrollo ágil
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Desarrollo ágil" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Desarrollo ágil
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../desarrollo%20%C3%A1gil/fundamentos/">Fundamentos</a>
+          
+            <label for="__nav_6_1">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Fundamentos" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          Fundamentos
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/fundamentos/backlog_management/" class="md-nav__link">
+        Conceptos básicos de gestión de backlogs de Producto y Sprint
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/fundamentos/ceremonies/" class="md-nav__link">
+        Fundamentos de las Ceremonias Ágiles
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/fundamentos/roles/" class="md-nav__link">
+        Roles Agile/Scrum
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/fundamentos/sprint/" class="md-nav__link">
+        Sprint
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2" type="checkbox" id="__nav_6_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/">Temas avanzados</a>
+          
+            <label for="__nav_6_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Temas avanzados" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_2">
+          <span class="md-nav__icon md-icon"></span>
+          Temas avanzados
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2_2" type="checkbox" id="__nav_6_2_2" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/acuerdos%20de%20equipo/">Acuerdos de equipo</a>
+          
+            <label for="__nav_6_2_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Acuerdos de equipo" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Acuerdos de equipo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/acuerdos%20de%20equipo/definition-of-done/" class="md-nav__link">
+        Definición de Hecho
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/acuerdos%20de%20equipo/definition-of-ready/" class="md-nav__link">
+        Definición de Listo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/acuerdos%20de%20equipo/team-manifesto/" class="md-nav__link">
+        Manifiesto del equipo
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/acuerdos%20de%20equipo/working-agreements/" class="md-nav__link">
+        Acuerdos de trabajo
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2_3" type="checkbox" id="__nav_6_2_3" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/colaboraci%C3%B3n/">Colaboración</a>
+          
+            <label for="__nav_6_2_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Colaboración" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Colaboración
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/colaboraci%C3%B3n/add-pairing-field-azure-devops-cards/" class="md-nav__link">
+        Cómo añadir un campo personalizado de emparejamiento en Azure DevOps User Stories
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/colaboraci%C3%B3n/teaming-up/" class="md-nav__link">
+        Desarrollo de Equipos de Colaboración
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/colaboraci%C3%B3n/virtual-collaboration/" class="md-nav__link">
+        Colaboración Virtual y Pair Programming
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/colaboraci%C3%B3n/why-collaboration/" class="md-nav__link">
+        Por qué colaboración
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2_4" type="checkbox" id="__nav_6_2_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/gesti%C3%B3n%20de%20backlog/">Gestión de backlog</a>
+          
+            <label for="__nav_6_2_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Gestión de backlog" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Gestión de backlog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/gesti%C3%B3n%20de%20backlog/external-feedback/" class="md-nav__link">
+        Retroalimentación externa
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/gesti%C3%B3n%20de%20backlog/minimal-slices/" class="md-nav__link">
+        Slices mínimos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6_2_5" type="checkbox" id="__nav_6_2_5" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/organizaci%C3%B3n%20eficaz/">Organización eficaz</a>
+          
+            <label for="__nav_6_2_5">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Organización eficaz" data-md-level="3">
+        <label class="md-nav__title" for="__nav_6_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Organización eficaz
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/organizaci%C3%B3n%20eficaz/delivery-plan/" class="md-nav__link">
+        Plan de entrega/release
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../desarrollo%20%C3%A1gil/temas%20avanzados/organizaci%C3%B3n%20eficaz/scrum-of-scrums/" class="md-nav__link">
+        Scrum de Scrums
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../documentacion/">Documentacion</a>
+          
+            <label for="__nav_7">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Documentacion" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Documentacion
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_2" type="checkbox" id="__nav_7_2" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_2">
+          Guía
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Guía" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_2">
+          <span class="md-nav__icon md-icon"></span>
+          Guía
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/gu%C3%ADa/code/" class="md-nav__link">
+        Código
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/gu%C3%ADa/project-and-repositories/" class="md-nav__link">
+        Proyectos y repositorios
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/gu%C3%ADa/pull-requests/" class="md-nav__link">
+        Pull Requests
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/gu%C3%ADa/rest-apis/" class="md-nav__link">
+        APIs REST
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/gu%C3%ADa/work-items/" class="md-nav__link">
+        Work Items
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_3" type="checkbox" id="__nav_7_3" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_3">
+          Herramientas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Herramientas" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_3">
+          <span class="md-nav__icon md-icon"></span>
+          Herramientas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/herramientas/automation/" class="md-nav__link">
+        Cómo automatizar comprobaciones sencillas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/herramientas/integrations/" class="md-nav__link">
+        Integración con Teams/Slack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/herramientas/languages/" class="md-nav__link">
+        Lenguajes
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/herramientas/wikis/" class="md-nav__link">
+        Wikis
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_4" type="checkbox" id="__nav_7_4" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_4">
+          Mejores prácticas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Mejores prácticas" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_4">
+          <span class="md-nav__icon md-icon"></span>
+          Mejores prácticas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/mejores%20pr%C3%A1cticas/automation/" class="md-nav__link">
+        Sustitución de la documentación por la automatización
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/mejores%20pr%C3%A1cticas/establish-and-manage/" class="md-nav__link">
+        Establecimiento y gestión de la documentación
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/mejores%20pr%C3%A1cticas/good-documentation/" class="md-nav__link">
+        Crear una buena documentación
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7_5" type="checkbox" id="__nav_7_5" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7_5">
+          Recetas
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Recetas" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_5">
+          <span class="md-nav__icon md-icon"></span>
+          Recetas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/recetas/deploy-docfx-azure-website/" class="md-nav__link">
+        Implementar el sitio web de documentación de DocFx en un sitio web de Azure automáticamente
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/recetas/static-website-with-mkdocs/" class="md-nav__link">
+        Cómo crear un sitio web estático para su documentación basado en mkdocs y mkdocs-material
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../documentacion/recetas/using-docfx-and-tools/" class="md-nav__link">
+        Uso de DocFx y las herramientas complementarias para generar un sitio web de documentación
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../observabilidad/">Observabilidad</a>
+          
+            <label for="__nav_8">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Observabilidad" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Observabilidad
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/alerting/" class="md-nav__link">
+        Guía para Alertas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/best-practices/" class="md-nav__link">
+        Prácticas Recomendadas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/diagnostic-tools/" class="md-nav__link">
+        Herramientas de diagnostico
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/log-vs-metric-vs-trace/" class="md-nav__link">
+        Logs vs Métricas vs Trazas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/microservices/" class="md-nav__link">
+        Microservices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/ml-observability/" class="md-nav__link">
+        Observabilidad en Machine Learning
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/observability-as-code/" class="md-nav__link">
+        Observability as Code
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/observability-databricks/" class="md-nav__link">
+        Observability databricks
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/observability-pipelines/" class="md-nav__link">
+        Observabilidad de pipelines de CI/CD
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/profiling/" class="md-nav__link">
+        Profiling
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/recipes-observability/" class="md-nav__link">
+        Recetas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_13" type="checkbox" id="__nav_8_13" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../observabilidad/herramientas/">Herramientas</a>
+          
+            <label for="__nav_8_13">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Herramientas" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_13">
+          <span class="md-nav__icon md-icon"></span>
+          Herramientas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/herramientas/KubernetesDashboards/" class="md-nav__link">
+        Kubernetes UI Dashboards
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/herramientas/OpenTelemetry/" class="md-nav__link">
+        Open Telemetry
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/herramientas/Prometheus/" class="md-nav__link">
+        Prometheus
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/herramientas/loki/" class="md-nav__link">
+        Loki
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8_14" type="checkbox" id="__nav_8_14" >
+      
+      
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8_14">
+          Pilares
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Pilares" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_14">
+          <span class="md-nav__icon md-icon"></span>
+          Pilares
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/pilares/dashboard/" class="md-nav__link">
+        Dashboard
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/pilares/logging/" class="md-nav__link">
+        Logging
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/pilares/metrics/" class="md-nav__link">
+        Métricas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../observabilidad/pilares/tracing/" class="md-nav__link">
+        Tracing
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../revisiones%20de%20codigo/">Revisiones de codigo</a>
+          
+            <label for="__nav_9">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Revisiones de codigo" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Revisiones de codigo
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revisiones%20de%20codigo/evidence-and-measures/" class="md-nav__link">
+        Evidencia y Medidas
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revisiones%20de%20codigo/tools/" class="md-nav__link">
+        Herramientas de revisión de código
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9_4" type="checkbox" id="__nav_9_4" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../revisiones%20de%20codigo/recetas/">Recetas</a>
+          
+            <label for="__nav_9_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Recetas" data-md-level="2">
+        <label class="md-nav__title" for="__nav_9_4">
+          <span class="md-nav__icon md-icon"></span>
+          Recetas
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revisiones%20de%20codigo/recetas/azure-pipelines-yaml/" class="md-nav__link">
+        YAML(Azure Pipelines) Code Reviews
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revisiones%20de%20codigo/recetas/bash/" class="md-nav__link">
+        Bash Code Reviews
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revisiones%20de%20codigo/recetas/csharp/" class="md-nav__link">
+        Csharp
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revisiones%20de%20codigo/recetas/markdown/" class="md-nav__link">
+        Markdown Code Reviews
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revisiones%20de%20codigo/recetas/python/" class="md-nav__link">
+        Python Code Reviews
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../revisiones%20de%20codigo/recetas/terraform/" class="md-nav__link">
+        Terraform Code Reviews
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../seguridad/">Seguridad</a>
+          
+            <label for="__nav_10">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Seguridad" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Seguridad
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../seguridad/rules-of-engagement/" class="md-nav__link">
+        Reglas de participación
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../seguridad/secret-detection/" class="md-nav__link">
+        Detección de secretos
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      
+      
+        
+          
+            
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../testing%20automatizado/">Testing automatizado</a>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Testing automatizado" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Testing automatizado
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objetivo" class="md-nav__link">
+    Objetivo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guia-general" class="md-nav__link">
+    Guía general
+  </a>
+  
+    <nav class="md-nav" aria-label="Guía general">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definir-una-estrategia-de-release" class="md-nav__link">
+    Definir una estrategia de release
+  </a>
+  
+    <nav class="md-nav" aria-label="Definir una estrategia de release">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principios-de-la-estrategia-de-release" class="md-nav__link">
+    Principios de la estrategia de release
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#release-de-la-aplicacion-y-promocion-del-entorno" class="md-nav__link">
+    Release de la aplicación y promoción del entorno
+  </a>
+  
+    <nav class="md-nav" aria-label="Release de la aplicación y promoción del entorno">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#el-primer-despliegue" class="md-nav__link">
+    El primer despliegue
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#criterios-para-un-entorno-similar-al-de-produccion" class="md-nav__link">
+    Criterios para un entorno similar al de producción
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modelado-del-pipeline-de-release" class="md-nav__link">
+    Modelado del pipeline de release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#etapas-del-pipeline-de-release" class="md-nav__link">
+    Etapas del pipeline de release
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#releases-de-preproduccion" class="md-nav__link">
+    Releases de preproducción
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reversion-de-releases" class="md-nav__link">
+    Reversión de releases
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencias" class="md-nav__link">
+    Referencias
+  </a>
+  
+    <nav class="md-nav" aria-label="Referencias">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#herramientas" class="md-nav__link">
+    Herramientas
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="continuous-delivery">Continuous Delivery</h1>
+<p>La inspiración detrás de la entrega continua es entregar constantemente software valioso a los usuarios con mayor frecuencia. La aplicación de los principios y prácticas expuestos en este documento le ayudará a reducir el riesgo, eliminar las operaciones manuales y aumentar la calidad y la confianza.
+El despliegue de software implica los siguientes principios:</p>
+<ul>
+<li>Aprovisionar y gestionar el tiempo de ejecución del entorno de la nube para su aplicación.</li>
+<li>Instalar la versión de la aplicación de destino en sus entornos de nube.</li>
+<li>Configurar su aplicación, incluyendo los datos necesarios.</li>
+</ul>
+<p>Una canalización de entrega continua es una manifestación automatizada de su proceso para agilizar estos mismos principios de forma coherente y repetible.</p>
+<h2 id="objetivo">Objetivo</h2>
+<ul>
+<li>Seguir las mejores prácticas de la industria para entregar los cambios de software a los clientes.</li>
+<li>Establecer la coherencia de los principios rectores y las mejores prácticas al ensamblar flujos de trabajo de entrega continua.</li>
+</ul>
+<h2 id="guia-general">Guía general</h2>
+<h3 id="definir-una-estrategia-de-release">Definir una estrategia de release</h3>
+<p>Es importante establecer un entendimiento común en torno a la estrategia/diseño de release durante la fase de planificación de un proyecto. Este entendimiento incluye el despliegue y el mantenimiento de la aplicación a lo largo de su SDLC.</p>
+<h4 id="principios-de-la-estrategia-de-release">Principios de la estrategia de release</h4>
+<p>Continuous Delivery por Jez Humble, David Farley cubren las consideraciones clave a seguir cuando se crea una estrategia de release:</p>
+<ul>
+<li>Partes encargadas de los despliegues en cada entorno, así como encargadas del release.</li>
+<li>Estrategia de gestión de activos y configuración.</li>
+<li>Enumeración de los entornos disponibles para las pruebas de aceptación, capacidad, integración y aceptación por parte del usuario, así como el proceso por el que se moverán las compilaciones a través de estos entornos.</li>
+<li>Descripción de los procesos que se seguirán para el despliegue en los entornos de prueba y producción, como las solicitudes de cambio que se abrirán y las aprobaciones que deben concederse.</li>
+<li>Descripción del método por el que se gestionará la configuración en tiempo de despliegue y de ejecución de la aplicación, y cómo se relaciona esto con el proceso de despliegue automatizado.</li>
+<li>Descripción de la integración con cualquier sistema externo. ¿En qué fase y cómo se prueban como parte de un release? ¿Cómo se comunica el operador técnico con el proveedor en caso de problema?</li>
+<li>Un plan de recuperación de desastres para poder recuperar el estado de la aplicación tras un desastre. ¿Qué pasos habrá que dar para reiniciar o volver a desplegar la aplicación en caso de que falle?</li>
+<li>Planificación del tamaño y la capacidad de producción: ¿Cuántos datos creará su aplicación en vivo? ¿Cuántos archivos de log o bases de datos necesitará? ¿Cuánto ancho de banda y espacio en disco necesitará? ¿Qué latencia esperan los clientes?</li>
+<li>Cómo funciona el despliegue inicial en producción.</li>
+<li>Cómo se gestionará la corrección de defectos y la aplicación de parches en el entorno de producción.</li>
+<li>Cómo se gestionarán las actualizaciones del entorno de producción, incluida la migración de datos. Cómo se llevarán a cabo las actualizaciones de la aplicación sin destruir su estado.</li>
+</ul>
+<h3 id="release-de-la-aplicacion-y-promocion-del-entorno">Release de la aplicación y promoción del entorno</h3>
+<p>Su proceso de release debe tomar el artefacto de compilación desplegable creado desde su etapa de commit y desplegarlo en todos los entornos de la nube, comenzando con su entorno de test.
+El entorno de test actúa como una puerta para validar si su conjunto de pruebas se completa con éxito. Esta validación siempre debe comenzar en un entorno de prueba mientras se inspecciona la versión desplegada integrada desde la rama de features / release que contiene sus cambios de código.
+Los cambios de código liberados en el entorno de pruebas suelen tener como objetivo la rama principal o la rama de release.</p>
+<h4 id="el-primer-despliegue">El primer despliegue</h4>
+<p>El primer despliegue de cualquier aplicación debe mostrarse al cliente en un entorno similar al de producción (UAT) para solicitar su opinión desde el principio. El entorno de UAT se utiliza para obtener la aceptación del propietario del producto y, en última instancia, promover el release a producción.</p>
+<h4 id="criterios-para-un-entorno-similar-al-de-produccion">Criterios para un entorno similar al de producción</h4>
+<ul>
+<li>Ejecuta el mismo sistema operativo que producción.</li>
+<li>Tiene instalado el mismo software que producción.</li>
+<li>Tiene el mismo tamaño y configuración que producción.</li>
+<li>Refleja la topología de red de producción.</li>
+<li>Se ejecutan pruebas de carga simuladas similares a las de producción después de un release para hacer visible cualquier degradación de la latencia o el rendimiento.</li>
+</ul>
+<h4 id="modelado-del-pipeline-de-release">Modelado del pipeline de release</h4>
+<p>Es fundamental modelar su proceso de prueba y release para establecer un entendimiento común entre los ingenieros de aplicaciones y las partes interesadas del cliente. Específicamente, alinear las expectativas de cuántos entornos de nube deben ser pre-aprovisionados, así como definir las funciones y responsabilidades.</p>
+<h4 id="etapas-del-pipeline-de-release">Etapas del pipeline de release</h4>
+<p>El pipeline de release debe tener en cuenta las siguientes condiciones:</p>
+<ul>
+<li>Selección del release: El desarrollador que lleva a cabo las pruebas de la aplicación debe tener la capacidad de seleccionar la versión de release que va a desplegar en el entorno de test.</li>
+<li>Despliegue: liberar el artefacto de compilación desplegable de la aplicación en el entorno de nube de destino.</li>
+<li>Configuración: Las aplicaciones deben ser configuradas de forma consistente en todos sus entornos. Esta configuración se aplica en el momento del despliegue. Los datos confidenciales, como los secretos y certificados de la aplicación, deben estar guardados en un almacén de claves y secretos de PaaS totalmente gestionado. Todos los secretos utilizados por la aplicación deben obtenerse internamente dentro de la propia aplicación. Los secretos no deberían estar expuestos dentro del entorno de ejecución.</li>
+<li>Migración de datos: Prepueble el estado de la aplicación y/o los registros de datos que se necesitan para su entorno de tiempo de ejecución. Esto también puede incluir los datos de prueba necesarios para su conjunto de pruebas de integración.</li>
+<li>Prueba de humo de despliegue. Su prueba de humo también debe verificar que su aplicación está apuntando a la configuración correcta.</li>
+<li>Realice cualquier escenario de prueba de aceptación manual o automatizada.</li>
+<li>Apruebe la puerta de release para promover la versión de la aplicación al entorno de la nube de destino.</li>
+</ul>
+<h4 id="releases-de-preproduccion">Releases de preproducción</h4>
+<p>Las aplicaciones candidatas deben desplegarse en un entorno similar al de producción para llevar a cabo las pruebas finales manuales/automatizadas (incluidas las pruebas de capacidad).</p>
+<h3 id="reversion-de-releases">Reversión de releases</h3>
+<p>Su estrategia de release debe tener en cuenta los escenarios de reversión en caso de fallos inesperados después de un despliegue.
+La reversión de releases puede ser complicada. Si no hay cambios en los datos que deban ser revertidos, entonces puede simplemente activar un nuevo release candidato para la última versión de producción conocida y promover ese release a lo largo de su pipeline de CD.</p>
+<h2 id="referencias">Referencias</h2>
+<ul>
+<li><a href="https://www.continuousdelivery.com/">Entrega continua</a> por Jez Humble, David Farley.</li>
+<li><a href="https://www.atlassian.com/continuous-delivery/principles/continuous-integration-vs-delivery-vs-deployment">Integración continua vs. entrega continua vs. despliegue continuo</a></li>
+<li><a href="https://docs.microsoft.com/en-us/azure/devops/migrate/phase-rollout-with-rings?view=azure-devops">Anillos de despliegue</a></li>
+</ul>
+<h3 id="herramientas">Herramientas</h3>
+<ul>
+<li><a href="https://fluxcd.io/docs/concepts/">Flux</a> para gitops</li>
+<li><a href="https://docs.microsoft.com/es-es/azure/azure-arc/kubernetes/conceptual-gitops-ci-cd#example-workflow">Flujo de trabajo CI/CD usando GitOps</a></li>
+<li><a href="https://github.com/tektoncd">Tekton</a> para pipelines nativos de Kubernetes</li>
+<li><a href="https://github.com/argoproj/argo-workflows">Argo Workflows</a></li>
+<li><a href="https://github.com/fluxcd/flagger">Flagger</a> para potentes lanzamientos nativos de Kubernetes, incluyendo blue/green, canary y A/B testing.</li>
+<li>No está muy relacionado con Kubernetes, pero echa un vistazo a <a href="https://jsonnet.org/">jsonnet</a>, un lenguaje de plantillas para reducir la repetición de tareas y aumentar el intercambio entre sus manifiestos yaml/json.</li>
+</ul>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Integración y entrega continuas" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Integración y entrega continuas
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../continuous-integration/" class="md-footer__link md-footer__link--next" aria-label="Next: Continuous Integration" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Continuous Integration
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.indexes"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.431f3d41.min.js"></script>
+      
+    
+  </body>
+</html>
